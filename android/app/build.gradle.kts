@@ -71,3 +71,15 @@ kotlin {
 flutter {
     source = "../.."
 }
+
+// 16 KB page-size compliance (mobile_scanner 6.0.11 dependency set): barcode-only force is
+// NOT enough (image_processing_util_jni stayed 0x1000); CameraX 1.3.3 -> 1.5.0 is required.
+configurations.all {
+    resolutionStrategy {
+        force("com.google.mlkit:barcode-scanning:17.3.0")
+        force("com.google.android.gms:play-services-mlkit-barcode-scanning:18.3.1")
+        force("androidx.camera:camera-core:1.5.0")
+        force("androidx.camera:camera-lifecycle:1.5.0")
+        force("androidx.camera:camera-camera2:1.5.0")
+    }
+}
