@@ -41,7 +41,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
       backgroundColor: c.darkColor,
       appBar: AppBar(title: const Text('Settings'), backgroundColor: c.primaryColor, foregroundColor: Colors.white),
       body: ListView(padding: const EdgeInsets.all(16), children: [
-              TransferSaveTile(gameSlug: 'windwhirlwhiz'),
+        TransferSaveTile(gameSlug: 'windwhirlwhiz'),
+        const SizedBox(height: 16),
         const Text('PLAYER NAME', style: TextStyle(color: Colors.white54, fontSize: 12)),
         const SizedBox(height: 6),
         TextField(controller: _nameCtrl, style: const TextStyle(color: Colors.white),
@@ -72,7 +73,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         GridView.builder(
           shrinkWrap: true, physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4, mainAxisSpacing: 8, crossAxisSpacing: 8, childAspectRatio: 0.8),
+              crossAxisCount: 2, mainAxisSpacing: 8, crossAxisSpacing: 8, childAspectRatio: 0.8),
           itemCount: arcThemes.length,
           itemBuilder: (_, i) {
             final t = arcThemes[i];
